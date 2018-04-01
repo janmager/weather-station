@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lnag="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Station - Multi Widgets Website</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body onload="clock()">
+
+      <div class="container">
+
+        <!-- WEATHER -->
+        <div class="little-container weatherr BOXpogoda">
+          <h1>WEATHER</h1>
+          <div class="two-option-btns toptop">
+            <span class="h12" onclick="getByActualLoc(); getByActualLoc2();">ACTUAL<br />LOCATION</span>
+            <span class="d3" onclick="SHOWgetByManualLoc();">CUSTOM<br />CITY</span>
+          </div>
+          <div class="search-weather">
+            <input type="text" name="weatherPlace" placeholder="MIEJSCOWOŚĆ..." id="manualWeather" spellcheck="false"/>
+            <span class="search-by-city-btn weather-button" onclick="getByManualLoc(); getByManualLoc2();"><img src="img/loop.png"</span>
+          </div>
+          <div id="weather">
+
+            <div id="location-box" class="weather-box"><span id="location">NONE</span></div>
+
+            <div id="description-box" class="weather-box"><span id="description">DATA</span></div>
+
+            <div id="temperature-box" class="weather-box"><span id="temperature">###</span></div>
+
+            <div id="humidity-box" class="weather-box"><span id="humidity">SHARE LOCATION</span></div>
+
+            <div id="wind-box" class="weather-box"><span id="wind">TO SHOW</span></div>
+
+            <!-- <div id="hpa-box" class="weather-box"><span id="hpa">ABY WYŚWIETLIĆ</span></div> -->
+
+            <div id="clouds-box" class="weather-box"><span id="clouds">WEATHER</span></div>
+
+            <div class="more-weather" style="margin-top: 20px;">
+
+              <div class="two-option-btns">
+                <span class="h12" onclick="h12Weather();">UPCOMING<br />HOURS</span>
+                <span class="d3" onclick="d3Weather();">NEXT<br />3 DAYS</span>
+              </div>
+
+              <div class="weather-break"></div>
+
+              <div class="more-box-weather h12-box">
+                <span class="weather-date">
+                  <span id="more-weather-day"></span>
+                  <span id="more-weather-month"></span>
+                </span>
+                <span class="rest-weather-date">
+                  <span id="soon-temp" class="soon-temp"></span>
+                  <span id="soon-desc" class="soon-desc"></span>
+                </span>
+                <span class="weather-date w-d-row">
+                  <span id="more-weather-hour"></span>
+                  <span> : </span>
+                  <span id="more-weather-min"></span>
+                </span>
+              </div>
+
+              <div class="more-box-weather d3-box">
+                <span class="weather-date">
+                  <span id="more-weather-day4"></span>
+                  <span id="more-weather-month4"></span>
+                </span>
+                <span class="rest-weather-date">
+                  <span id="soon-temp4" class="soon-temp"></span>
+                  <span id="soon-desc4" class="soon-desc"></span>
+                </span>
+                <span class="weather-date w-d-row">
+                  <span id="more-weather-hour4"></span>
+                  <span> : </span>
+                  <span id="more-weather-min4"></span>
+                </span>
+              </div>
+
+              <div class="weather-break"></div>
+
+              <div class="more-box-weather h12-box">
+                <span class="weather-date">
+                  <span id="more-weather-day2"></span>
+                  <span id="more-weather-month2"></span>
+                </span>
+                <span class="rest-weather-date">
+                  <span id="soon-temp2" class="soon-temp"></span>
+                  <span id="soon-desc2" class="soon-desc"></span>
+                </span>
+                <span class="weather-date w-d-row">
+                  <span id="more-weather-hour2"></span>
+                  <span> : </span>
+                  <span id="more-weather-min2"></span>
+                </span>
+              </div>
+
+              <div class="more-box-weather d3-box">
+                <span class="weather-date">
+                  <span id="more-weather-day5"></span>
+                  <span id="more-weather-month5"></span>
+                </span>
+                <span class="rest-weather-date">
+                  <span id="soon-temp5" class="soon-temp"></span>
+                  <span id="soon-desc5" class="soon-desc"></span>
+                </span>
+                <span class="weather-date w-d-row">
+                  <span id="more-weather-hour5"></span>
+                  <span> : </span>
+                  <span id="more-weather-min5"></span>
+                </span>
+              </div>
+
+              <div class="weather-break"></div>
+
+              <div class="more-box-weather h12-box">
+                <span class="weather-date">
+                  <span id="more-weather-day3"></span>
+                  <span id="more-weather-month3"></span>
+                </span>
+                <span class="rest-weather-date">
+                  <span id="soon-temp3" class="soon-temp"></span>
+                  <span id="soon-desc3" class="soon-desc"></span>
+                </span>
+                <span class="weather-date w-d-row">
+                  <span id="more-weather-hour3"></span>
+                  <span> : </span>
+                  <span id="more-weather-min3"></span>
+                </span>
+              </div>
+
+              <div class="more-box-weather d3-box">
+                <span class="weather-date">
+                  <span id="more-weather-day6"></span>
+                  <span id="more-weather-month6"></span>
+                </span>
+                <span class="rest-weather-date">
+                  <span id="soon-temp6" class="soon-temp"></span>
+                  <span id="soon-desc6" class="soon-desc"></span>
+                </span>
+                <span class="weather-date w-d-row">
+                  <span id="more-weather-hour6"></span>
+                  <span> : </span>
+                  <span id="more-weather-min6"></span>
+                </span>
+              </div>
+
+              <div class="weather-break"></div>
+
+            </div>
+
+            <span class="a showmore-btn" onclick="showmoreWeather();" style="padding-left: 0px"><span class="game-name" id="game-name-show-more2" style="margin: 4px 0px 4px 0px;">SHOW MORE</span></span>
+
+          </div>
+        </div>
+
+    </div>
+
+    <footer>
+      <span>&copy; <a href="http://www.janmager.pl">www.janmager.pl</a></span>
+    </footer>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/weather-option.js"></script>
+  <script src="js/weather-soon.js"></script>
+
+  </body>
+</html>
